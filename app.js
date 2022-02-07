@@ -1,8 +1,11 @@
-require('colors');
+require('colors'); //PAquete de terceros
 
+const { mostrarMenu } = require('./helpers/mensajes');
+
+console.clear();
 
 const main = async() => {
-     console.log("Hello gonorreas!!!");
+     mostrarMenu();
 }
 
 main()
