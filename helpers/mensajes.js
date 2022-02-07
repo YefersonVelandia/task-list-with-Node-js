@@ -3,9 +3,9 @@ require('colors');
 const mostrarMenu = () =>{
     console.clear();
 
-    console.log('============================='.brightYellow);
-    console.log('  Seleccione una opción '.brightYellow);
-    console.log('=============================\n'.brightYellow);
+    console.log('============================='.yellow);
+    console.log('  Seleccione una opción '.yellow);
+    console.log('=============================\n'.yellow);
 
     console.log(` ${'1'.green} Crear tarea`);
     console.log(` ${'2'.green} Listar tareas`);
@@ -14,8 +14,36 @@ const mostrarMenu = () =>{
     console.log(` ${'5'.green} Completar tarea(s)`);
     console.log(` ${'6'.green} Borra tarea`);
     console.log(` ${'7'.green} Finalizar programa\n`);
+
+
+    const readline = require('readline').createInterface({
+        input : process.stdin,
+        output: process.stdout
+    });
+
+
+    readline.question('Selecciones una opción: ', (opt) => {
+        console.log(opt);
+        readline.close();
+    });
+
+
+    
+}
+
+const pausa = () => {
+    const readline = require('readline').createInterface({
+        input : process.stdin,
+        output: process.stdout
+    });
+
+    readline.question(`\nPresione ${'ENTER'.green} para continuar\n`, (opt) => {
+        readline.close();
+    });
+
 }
 
 module.exports = {
-    mostrarMenu
+    mostrarMenu,
+    pausa
 }
